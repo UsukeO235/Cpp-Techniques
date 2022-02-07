@@ -34,11 +34,11 @@ class UserTask : public Task
 
 int main()
 {
-    UserTask st;
+    UserTask ut;
     
-    Task* us_ptr = static_cast<Task*>(&st);
+    Task* ut_ptr = static_cast<Task*>(&ut);
     
-    us_ptr->call();
+    ut_ptr->call();
     
     return 0;
 }

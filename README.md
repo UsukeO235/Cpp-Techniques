@@ -6,7 +6,7 @@ C++ Techniques I Usually Use
 このリポジトリは私がC++プログラムを作成するときによく使うテクニックをまとめたものです。
 ここに書かれていることはあくまで個人の原則であり、組織のルールがあればそちらを優先します。
 
-## callback関数よりもメンバ関数のoverrideを優先する。
+## callback関数(関数ポインタ)よりもメンバ関数のoverrideを優先する。
 std::functionが使えるならばstd::functionを使うこととする。
 
 ```cpp
@@ -34,6 +34,12 @@ class UserTask : public Task
 
 int main()
 {
+    UserTask st;
+    
+    Task* us_ptr = static_cast<Task*>(&st);
+    
+    us_ptr->call();
+    
     return 0;
 }
 ```

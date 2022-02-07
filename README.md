@@ -8,3 +8,32 @@ C++ Techniques I Usually Use
 
 ## callback関数よりもメンバ関数のoverrideを優先する。
 std::functionが使えるならばstd::functionを使うこととする。
+
+```cpp
+class Task
+{
+    public:
+    virtual ~Task(void)
+    {
+    
+    }
+    
+    virtual void call(void) = 0;  // 純粋仮想関数
+};
+
+class UserTask : public Task
+{
+    private:
+    
+    public:
+    virtual void call(void) override
+    {
+
+    }
+};
+
+int main()
+{
+    return 0;
+}
+```

@@ -61,7 +61,7 @@ for( auto x:xs )
 原則としてCスタイルのポインタは使わない。代わりにスマートポインタを用いる。std::shared_ptrはむやみに使わない。
 ```cpp
 #include <memory>
-std::unique_ptr<uint8_t[]> hoge_ptr(new uint8_t[3]);  // 名前は原則~ptr
+std::unique_ptr<uint8_t[]> hoge_ptr(new uint8_t[3]);  // 名前は原則"~ptr"
 ```
 
 ## callback関数(関数ポインタ)よりもメンバ関数のoverrideを優先する。
